@@ -1,0 +1,29 @@
+﻿= .PI 3.14159
+= .CircleProto (object .clone)
+= .SquareProto (object .clone)
+
+CircleProto .method .area {
+  PI .* ((self .radius) .^ 2)
+}
+
+SquareProto .method .area { 
+  (self .side) .^ 2 
+}
+
+
+defun .printArea .shape { 
+  print (shape .area)
+}
+
+
+= .circle1 (CircleProto .clone)
+circle1 .field .radius 5
+
+= .square1 (SquareProto .clone)
+square1 .field .side 10
+
+print (circle1 .area)
+print (square1 .area)
+
+printArea circle1
+printArea square1
